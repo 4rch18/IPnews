@@ -281,34 +281,10 @@ fieldset[disabled] .btn-warning.active {
     background-color: #3fada8 !important;
 }
 
-#timelinecontainer{
-width: 100%;
-height: 200px;
-}
-
-#timeline{
- width: 100%;
- height: 100%;
- font-size: 12px;
- background: #CCCCCC;
+#timelinecontainer {
+    height:200px;
 }
 
 #mapcontainer {
- width: 100%;
- height: 400px;
-}
-
-#map {
- width: 100%;
- height: 100%;
- background: #EEEEEE;
-}
-
-.infotitle {
-    font-size: 14px;
-    font-weight: bold;
-}
-.infodescription {
-    font-size: 14px;
-    font-style: italic;
+    height: 200px;
 }

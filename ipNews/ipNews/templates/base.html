@@ -6,6 +6,109 @@
     <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ STATIC_URL }}ipNews/css/stylesheet.css">
     {% block stylesheets %}{% endblock %}
+
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}timemap/lib/jquery-1.6.2.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}timemap/lib/mxn/mxn.js?(googlev3)"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}timemap/lib/timeline-1.2.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}timemap/src/timemap.js"></script>
+    <script type="text/javascript">
+
+        var tm;
+        $(function () {
+
+            tm = TimeMap.init({
+                mapId: "map",               // Id of map div element (required)
+                timelineId: "timeline",     // Id of timeline div element (required)
+                options: {
+                    mapType: "physical",
+                    eventIconPath: "{{ STATIC_URL }}timemap/images/"
+                },
+                datasets: [
+                    {
+                        type: "basic",
+                        options: {
+                            items: [
+                                {
+                                    start: "2014-10-02",
+                                    point: {
+                                        lat: 28.6454,
+                                        lon: 77.0907
+                                    },
+                                    title: "Make in India to be led by automobile, auto component sectors",
+                                    options: {
+                                        description: "As the Make in India story unfolds, the road ahead for the automobile industry is fraught with both excitement and challenge. The Make in India story will, in all likelihood, be led by the automobile and auto component sector as this accounts for over 30% of the entire manufacturing sector in India. But the auto sector can't grow alone...",
+                                        theme: "orange"
+                                    }
+                                },
+                                {
+                                    start: "2014-10-02",
+                                    point: {
+                                        lat: 28.6454,
+                                        lon: 77.0907
+                                    },
+                                    title: "Make in India’? Factories see slowest growth in 9 months",
+                                    options: {
+                                        description: "Last week, India’s prime minister Narendra Modi launched an ambitious push to kick-start India’s relatively small manufacturing sector, lifting its share of India’s GDP to 25 per cent from 15 per cent....",
+                                        theme: "orange"
+                                    }
+                                },
+                                    {
+                                    start: "2014-09-27",
+                                    point: {
+                                        lat: 28.6454,
+                                        lon: 77.0907
+                                    },
+                                    title: "Narendra Modi's Make in India Campaign: Five challenges",
+                                    options: {
+                                        description: "New Delhi: Seeking to make the country a global manufacturing hub, Prime Minister Narendra Modi launched the ambitious 'Make in India' campaign in the presence of global and domestic CEOs this week....",
+                                        theme: "orange"
+                                    }
+                                },
+                                    {
+                                    start: "2014-10-01",
+                                    point: {
+                                        lat: 12.9332,
+                                        lon: 77.6321
+                                    },
+                                    title: "Koramangala Inc cheers PM Narendra Modi's 'Make in India' call",
+                                    options: {
+                                        description: "On account of push to the manufacturing sector as opined by the industry expert in the region, manufacturers of Koramangala have hailed the recently launch of Make in India by Prime Minister Narendra Modi. The industry insiders expected an additional annual growth of around 15 percent in the region if the initiative takes its shape as being promulgated by its policy makers. This expected growth is in sync with the expected GDP growth push being opined by the Federation of Indian Chamber of Commerce and Industry (FICCI).",
+                                        theme: "orange"
+                                    }
+                                },
+                                    {
+                                    start: "2014-10-01",
+                                    point: {
+                                        lat: 57.7394,
+                                        lon: -4.6869
+                                    },
+                                    title: "PM Modi's 'Make in India' campaign: 12 Scottish firms visiting India for business, tie-ups next week",
+                                    options: {
+                                        description: "With 'Make In India' campaign fuelling investor sentiment, a delegation of a dozen leading Scottish firms and four business heads is coming to India next week to scout for business opportunities and tie-ups....",
+                                        theme: "green"
+                                    }
+                                },
+                                    {
+                                    start: "2014-09-27",
+                                    point: {
+                                        lat: 40.7056,
+                                        lon: -73.9780
+                                    },
+                                    title: "Showcasing ‘Make in India",
+                                    options: {
+                                        description: " If anything, with the growth impulse returning and the prospect of investments picking up, the current account deficit could widen in the months ahead. It is indeed imperative that the government’s actions should match its words. For now, certainly, there is fresh wind in Mr. Modi’s sails as he prepares to address the CEOs of top American multinationals in New York on Monday....",
+                                        theme: "purple"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ],
+                bandIntervals: "day"
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -14,26 +117,31 @@
 
 <div class="container">
 
-<div id="contentpane" class="row">
+    <div id="contentpane" class="row">
 
-<div class="card-main col-lg-offset-1 col-lg-6">
-    {% block left_content %}
+        <div class="card-main col-lg-offset-1 col-lg-6">
+            {% block left_content %}
 
-    {% endblock %}
+            {% endblock %}
+        </div>
+
+        <div class="card-event col-xs-offset-1 col-lg-3">
+            {% block right_content %}
+
+            {% endblock %}
+        </div>
+
+    </div>
+
 </div>
 
-<div class="card-event col-xs-offset-1 col-lg-3">
-    {% block right_content %}
+{% block time_map %}
 
-    {% endblock %}
-</div>
-
-</div>
-
-</div>
+{% endblock %}
 
 
-{% block scripts %}{% endblock %}
+{% block scripts %}
+{% endblock %}
 </body>
 
 </html>
