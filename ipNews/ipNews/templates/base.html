@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{% block title %}News{% endblock %}</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}ipNews/css/stylesheet.css">
+    {% block stylesheets %}{% endblock %}
+</head>
+
+<body>
+{% include 'navbar.html' %}
+
+
+<div class="container">
+
+<div id="contentpane" class="row">
+
+<div class="card-main col-lg-offset-1 col-lg-6">
+    {% block left_content %}
+
+    {% endblock %}
+</div>
+
+<div class="card-event col-xs-offset-1 col-lg-3">
+    {% block right_content %}
+
+    {% endblock %}
+</div>
+
+</div>
+
+</div>
+
+
+{% block scripts %}{% endblock %}
+</body>
+
+</html>
