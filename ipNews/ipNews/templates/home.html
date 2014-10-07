@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}IP News{% endblock %}
+{% block title %}IP News Aggregator{% endblock %}
 
 {% block left_content %}
     <div class="row">
@@ -65,49 +65,65 @@
             <div class="panel-heading">
                 <h4 class="panel-user-h4"><span class="glyphicon glyphicon-user"></span> Narendra Modi</h4>
             </div>
-            <div class="panel-body">
+            <div class="panel-body" style="margin-top:5px;margin-bottom:10px;">
                 Narendra Damodardas Modi (born 17 September 1950) is the 15th and current Prime Minister of India.[1][2]
                 Modi, a leader of the Bharatiya Janata Party (BJP), also... <a
                     href="https://en.wikipedia.org/wiki/Narendra_Modi" target="_blank">Wikipedia <span
                     class="glyphicon glyphicon-share"></span></a>
+
+                <div class="row" style="width:273px;margin-top:10px;margin-bottom:-25px;">
+                    <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/narendramodi"
+                       data-widget-id="519605592625643520">Tweets by @narendramodi</a>
+                    <script>!function (d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                        if (!d.getElementById(id)) {
+                            js = d.createElement(s);
+                            js.id = id;
+                            js.src = p + "://platform.twitter.com/widgets.js";
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }
+                    }(document, "script", "twitter-wjs");</script>
+                </div>
             </div>
         </div>
     </div>
 
     <div class="row pull-left" style="width: 275px;">
         <div class="panel panel-default">
+
             <div class="panel-heading">
+                <div class="row" style="margin-top:-20px;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d448189.0197263698!2d77.09075729999999!3d28.64544145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew+Delhi%2C+Delhi%2C+India!5e0!3m2!1sen!2s!4v1412471862999"
+                            width="273" height="150" frameborder="0"
+                            style="border:0;border-bottom:1px #ddd solid;margin-top:10px;"></iframe>
+                </div>
                 <h4 class="panel-user-h4"><span class="glyphicon glyphicon-map-marker"></span> New Delhi</h4>
             </div>
-            <div class="panel-body">
+            <div class="panel-body" style="margin-top:5px;">
                 New Delhi is the capital of India and seat of the executive, legislative, and
                 judiciary branches of the Government of India. It is also the centre of the Government of the... <a
-                    href="https://en.wikipedia.org/wiki/Narendra_Modi" target="_blank">Wikipedia <span
+                    href="https://en.wikipedia.org/wiki/New_Delhi" target="_blank">Wikipedia <span
                     class="glyphicon glyphicon-share"></span></a>
-                <div class="row">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d448189.0197263698!2d77.09075729999999!3d28.64544145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew+Delhi%2C+Delhi%2C+India!5e0!3m2!1sen!2s!4v1412471862999" width="273" height="150" frameborder="0" style="border:0;margin-top:10px;"></iframe>
-                </div>
             </div>
         </div>
     </div>
 {% endblock %}
 
-<div id="timemap">
-        <div id="timelinecontainer">
-          <div id="timeline"></div>
-        </div>
-        <div id="mapcontainer">
-          <div id="map"></div>
-        </div>
-    </div>
+{%  block full_content %}
+    <iframe class="pull-left youtube-iframe" width="300" height="200" src="//www.youtube.com/embed/GrUqB0_lWmU" frameborder="0"></iframe>
+    <iframe class="pull-left youtube-iframe" width="300" height="200" src="//www.youtube.com/embed/PpYSOypGcJc" frameborder="0"></iframe>
+    <iframe class="pull-left youtube-iframe" width="300" height="200" src="//www.youtube.com/embed/AbbQYND0O8k" frameborder="0"></iframe>
+{%  endblock %}
+
 
 {% block time_map %}
+
     <div id="timemap">
         <div id="timelinecontainer">
-          <div id="timeline"></div>
+            <div id="timeline"></div>
         </div>
         <div id="mapcontainer">
-          <div id="map"></div>
+            <div id="map"></div>
         </div>
     </div>
 {% endblock %}

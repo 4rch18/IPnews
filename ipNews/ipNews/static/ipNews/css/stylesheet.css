@@ -312,3 +312,8 @@ height: 200px;
     font-size: 14px;
     font-style: italic;
 }
+
+.youtube-iframe {
+    box-shadow: 0 0 10px #111;
+    margin:0px 0px 30px 20px;
+}
