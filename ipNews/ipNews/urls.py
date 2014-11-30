@@ -10,4 +10,5 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'ipNews.views.home'),
+    url(r'^browse/$', 'ipNews.views.browse')
 )

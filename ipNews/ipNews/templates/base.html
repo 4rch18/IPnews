@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>{% block title %}News{% endblock %}</title>
+    <title>{% block title %}NewsAgg{% endblock %}</title>
     <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ STATIC_URL }}ipNews/css/stylesheet.css">
     <link rel="stylesheet" href="{{ STATIC_URL }}ipNews/css/base.css">
@@ -119,6 +119,7 @@
 <body onload="init();">
 {% include 'navbar.html' %}
 
+{% block center_upper %}
 <div id="center-container">
     <div class="container">
         <div class="col-lg-offset-1 col-lg-6">
@@ -129,9 +130,7 @@
         </div>
     </div>
 </div>
-<div id="right-container">
-
-</div>
+{% endblock %}
 
 <div id="log"></div>
 
